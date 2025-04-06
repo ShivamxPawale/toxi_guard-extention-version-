@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "ToxiGuard",
+  "version": "1.0",
+  "description": "Guides your vision towards toxic text",
+ "permissions": [
+    "declarativeNetRequest",
+    "activeTab",
+    "scripting"
+]
+,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icons.png",
+    "48": "icons/icons.png",
+    "128": "icons/icons.png"
+}
+,
+  "content_scripts": [
+    {
+        "matches": ["*://*/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+    }
+] 
+}
